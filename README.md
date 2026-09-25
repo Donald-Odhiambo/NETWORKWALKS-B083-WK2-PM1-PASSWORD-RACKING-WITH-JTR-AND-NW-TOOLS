@@ -1,4 +1,4 @@
-# Password Cracking Lab — Johnny (JtR) + NetworkWalks
+# Password Auditing Lab — Johnny (JtR) + NetworkWalks
 
 > Educational lab: recover a protected file password using two tools and verify both give the same result.
 
