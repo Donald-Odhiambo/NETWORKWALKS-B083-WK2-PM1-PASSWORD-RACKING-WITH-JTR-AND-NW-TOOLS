@@ -1,18 +1,21 @@
 
 # Password Security Auditing Using John the Ripper and NetworkWalks Tools
 
+
 > **Educational Use Only:** This repository documents an authorized password-security lab performed in a controlled training environment. Only test hashes and intentionally vulnerable files are used. No real user credentials or production systems are involved.
 
 ## Objective
 
-Demonstrate offline password auditing by recovering a protected file’s password using two independent tools and verifying that both produce the same result.
+Demonstrate offline password auditing by recovering a protected file's password using two independent tools and verifying that both produce the same result.
 
 ## Tools Used
 
-- **John the Ripper (Johnny GUI)** on Windows
-- **NetworkWalks Hash Calculator** (online)
-- **NetworkWalks Password Cracker** (online)
-- Intentionally vulnerable lab files (e.g., password-protected PDF)
+| Tool | Platform | Purpose |
+|------|----------|---------|
+| John the Ripper (Johnny GUI) | Windows | Offline password hash auditing and recovery |
+| NetworkWalks Hash Calculator | Web (Online) | Hash identification and verification |
+| NetworkWalks Password Cracker | Web (Online) | Dictionary-based password cracking |
+| Lab Protected File (PDF) | Windows | Intentionally vulnerable test target |
 
 ## Lab Workflow
 
@@ -82,6 +85,29 @@ Both flags correspond to the same recovered password, confirming that the two to
 - Offline attacks do not require contacting the target system
 - Strong, unique passwords and multi-factor authentication significantly reduce risk
 - Password managers help generate and store credentials that resist dictionary attacks
+
+## Programme
+
+**NetworkWalks Academy – Cyber IT Diploma (Cybersecurity with Ethical Hacking & AI)**  
+Batch: B083  
+Module: Password Cracking & Security Auditing  
+Mentor: **Waqas Karim, CCIC**
+
+## Author
+
+**Donald Oketch Odhiambo**  
+Cybersecurity Student | Aspiring Penetration Tester
+
+- LinkedIn: [Donald Oketch Odhiambo](https://www.linkedin.com/in/oketch-donald-odhiambo-0a6823429)
+- GitHub: [Donald-Odhiambo](https://github.com/Donald-Odhiambo)
+
+## References
+
+1. NetworkWalks Academy. Password Cracker (Dictionary Attack). https://networkwalks.com/password-cracker/ [18]
+2. NetworkWalks Academy. Password Cracking with JTR John the Ripper (Project Task Lab). https://networkwalks.com/password-cracking-with-jtr-john-the-ripper-project-task-lab/ [19]
+3. Openwall. John the Ripper Documentation. https://www.openwall.com/john/doc/ [2]
+4. Openwall. John the Ripper Usage Examples. https://www.openwall.com/john/doc/EXAMPLES.shtml [3]
+5. TechTarget. How to use the John the Ripper password cracker. https://www.techtarget.com/cybersecurity/tutorial/How-to-use-the-John-the-Ripper-password-cracker [5]
 
 ## Disclaimer
 
