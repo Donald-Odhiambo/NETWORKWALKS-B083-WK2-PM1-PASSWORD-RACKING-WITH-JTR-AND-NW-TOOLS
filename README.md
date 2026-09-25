@@ -1,114 +1,58 @@
+# Password Cracking Lab — Johnny (JtR) + NetworkWalks
 
-# Password Security Auditing Using John the Ripper and NetworkWalks Tools
+> Educational lab: recover a protected file password using two tools and verify both give the same result.
 
+## At a Glance
 
-> **Educational Use Only:** This repository documents an authorized password-security lab performed in a controlled training environment. Only test hashes and intentionally vulnerable files are used. No real user credentials or production systems are involved.
+- **Programme:** NetworkWalks Academy — Cyber IT Diploma (Cybersecurity with Ethical Hacking & AI), Batch B083  
+- **Mentor:** Waqas Karim, CCIC  
+- **Author:** Donald Oketch Odhiambo  
+- **Tools:** John the Ripper (Johnny GUI) on Windows; NetworkWalks Hash Calculator + Password Cracker (online)  
+- **Outcome:** Same password recovered with both tools; file opened successfully; flags captured
 
-## Objective
+## Tools
 
-Demonstrate offline password auditing by recovering a protected file's password using two independent tools and verifying that both produce the same result.
+| Tool | Platform | Role |
+|------|----------|------|
+| John the Ripper (Johnny GUI) | Windows | Offline hash auditing and password recovery |
+| NetworkWalks Hash Calculator | Web | Hash identification/verification |
+| NetworkWalks Password Cracker | Web | Dictionary attack and verification |
+| Lab Protected File (PDF) | Windows | Intentionally vulnerable target |
 
-## Tools Used
+## Workflow (4 Steps)
 
-| Tool | Platform | Purpose |
-|------|----------|---------|
-| John the Ripper (Johnny GUI) | Windows | Offline password hash auditing and recovery |
-| NetworkWalks Hash Calculator | Web (Online) | Hash identification and verification |
-| NetworkWalks Password Cracker | Web (Online) | Dictionary-based password cracking |
-| Lab Protected File (PDF) | Windows | Intentionally vulnerable test target |
+1. Extract hash from the protected file (lab extractor)
+2. Crack with Johnny (load hash → select type → wordlist → run → record password)
+3. Verify with NetworkWalks (paste same hash → run dictionary attack → confirm same password)
+4. Open the protected file using the recovered password
 
-## Lab Workflow
+## Why Results Match
 
-1. Extract the password hash from the protected file using the lab-provided extractor.
-2. Crack the hash with **Johnny** on Windows:
-   - Load the hash file
-   - Select the correct hash type
-   - Choose a wordlist
-   - Run the attack
-   - Record the recovered password
-3. Verify with **NetworkWalks tools**:
-   - Paste the same hash into the NetworkWalks Hash Calculator
-   - Run the dictionary attack
-   - Confirm the same password is recovered
-4. Open the protected file using the recovered password to prove success.
+Offline cracking is deterministic: same hash + same algorithm + same candidate space → same password. Tools may differ in speed or order, not in the final correct password when configured equivalently. [18][19][26]
 
-NetworkWalks describes this exact pattern: extract the hash, run the attack, then open the file with the recovered password. [18] Their JTR lab task is specifically to recover a locked PDF password using Johnny. [19]
+## Repo Map
 
-## Why Both Tools Give the Same Result
-
-Password cracking in this lab is **offline hash matching**:
-
-- The target hash is fixed
-- The hash algorithm is fixed
-- A candidate password is hashed and compared to the target
-- The first password that produces a matching hash is the correct one
-
-Because cryptographic hashes are deterministic, any tool that correctly implements the same algorithm and tests the same password space will ultimately find the same password. Differences may appear in speed or attack order, but not in the final correct password when the hash, format, and wordlist are effectively the same. [26]
-
-## Repository Contents
-
-```text
-password-cracking-lab/
-├── README.md
-├── flags/
-│   ├── flag_johnny.txt
-│   └── flag_networkwalks.txt
-├── lab-files/
-│   └── (intentionally vulnerable test files)
-├── screenshots/
-│   ├── johnny_result.png
-│   └── networkwalks_result.png
-└── writeup/
-    └── report.md
-```
-
-**Note:** This repository does **not** include real password hashes, personal data, or production files. Only lab-provided or synthetic examples are used.
-
-## Flags
-
-Flags are included in the `flags/` directory as proof of successful completion:
-
-- `flag_johnny.txt` – flag obtained after cracking with Johnny
-- `flag_networkwalks.txt` – flag obtained after cracking with NetworkWalks tools
-
-Both flags correspond to the same recovered password, confirming that the two toolchains produce consistent results.
-
-## Findings
-
-- The same password was recovered using Johnny and NetworkWalks tools
-- Opening the protected file with this password succeeded
-- The lab confirms that offline password auditing depends on hash matching, not on a specific tool
+- `flags/flag_johnny.txt` — flag after Johnny crack  
+- `flags/flag_networkwalks.txt` — flag after NetworkWalks crack  
+- `screenshots/` — evidence images  
+- `writeup/report.md` — full lab report  
 
 ## Security Takeaways
 
-- Weak or common passwords can be recovered quickly from hashes
-- Offline attacks do not require contacting the target system
-- Strong, unique passwords and multi-factor authentication significantly reduce risk
-- Password managers help generate and store credentials that resist dictionary attacks
-
-## Programme
-
-**NetworkWalks Academy – Cyber IT Diploma (Cybersecurity with Ethical Hacking & AI)**  
-Batch: B083  
-Module: Password Cracking & Security Auditing  
-Mentor: **Waqas Karim, CCIC**
+- Weak/common passwords are recovered quickly via dictionary attacks  
+- Offline attacks need only the hash (no live system interaction)  
+- Use long unique passwords + a password manager + MFA  
 
 ## Author
 
-**Donald Oketch Odhiambo**  
-Cybersecurity Student | Aspiring Penetration Tester
-
-- LinkedIn: [Donald Oketch Odhiambo](https://www.linkedin.com/in/oketch-donald-odhiambo-0a6823429)
-- GitHub: [Donald-Odhiambo](https://github.com/Donald-Odhiambo)
+**Donald Oketch Odhiambo** — Cybersecurity Student | Aspiring Penetration Tester  
+- LinkedIn: [Donald Oketch Odhiambo](https://www.linkedin.com/in/oketch-donald-odhiambo-0a6823429)  
+- GitHub: [Donald-Odhiambo](https://github.com/Donald-Odhiambo)  
 
 ## References
 
-1. NetworkWalks Academy. Password Cracker (Dictionary Attack). https://networkwalks.com/password-cracker/ [18]
-2. NetworkWalks Academy. Password Cracking with JTR John the Ripper (Project Task Lab). https://networkwalks.com/password-cracking-with-jtr-john-the-ripper-project-task-lab/ [19]
-3. Openwall. John the Ripper Documentation. https://www.openwall.com/john/doc/ [2]
-4. Openwall. John the Ripper Usage Examples. https://www.openwall.com/john/doc/EXAMPLES.shtml [3]
-5. TechTarget. How to use the John the Ripper password cracker. https://www.techtarget.com/cybersecurity/tutorial/How-to-use-the-John-the-Ripper-password-cracker [5]
+1. NetworkWalks Password Cracker — https://networkwalks.com/password-cracker/ [18]  
+2. NetworkWalks JTR Lab Task — https://networkwalks.com/password-cracking-with-jtr-john-the-ripper-project-task-lab/ [19]  
+3. Openwall John the Ripper Docs — https://www.openwall.com/john/doc/ [2]  
 
-## Disclaimer
-
-This project is for educational and training purposes only. All exercises were performed in an authorized lab environment using intentionally vulnerable files. Do not use these techniques on systems or files you do not own or have explicit permission to test.
+> Disclaimer: Educational use only. Authorized lab environment. No real credentials or production systems.
