@@ -1,8 +1,6 @@
 
 # Password Security Auditing Using John the Ripper and NetworkWalks Tools
 
-# Password Cracking Lab: John the Ripper (Johnny) + NetworkWalks Tools
-
 > **Educational Use Only:** This repository documents an authorized password-security lab performed in a controlled training environment. Only test hashes and intentionally vulnerable files are used. No real user credentials or production systems are involved.
 
 ## Objective
