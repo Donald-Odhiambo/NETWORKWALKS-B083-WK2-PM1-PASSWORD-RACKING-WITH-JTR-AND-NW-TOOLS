@@ -4,7 +4,7 @@
 
 ## At a Glance
 
-- **Programme:** NetworkWalks Academy — Cyber IT Diploma (Cybersecurity with Ethical Hacking & AI), Batch B083  
+- **Programme:** NetworkWalks Academy — Cysesecurity Internship, Batch B083  
 - **Mentor:** Waqas Karim, CCIC  
 - **Author:** Donald Oketch Odhiambo  
 - **Tools:** John the Ripper (Johnny GUI) on Windows; NetworkWalks Hash Calculator + Password Cracker (online)  
