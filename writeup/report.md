@@ -1,4 +1,4 @@
-# Password Cracking Lab Report
+# Password Auditing Lab Report
 
 ## Assessment Information
 
